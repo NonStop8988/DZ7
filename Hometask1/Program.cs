@@ -16,8 +16,8 @@ void PrintNumbersInRange(int start, int end)
     PrintNumbersInRange(start + 1, end);
 }
 
-// Функция - проверка числа на натуральность
-int IsNaturalNumber(int number)
+// Функция - преобразование числа в ноль, если оно отрицательное
+int MakeNonNegative(int number)
 {
     if (number < 0)
     {
@@ -32,9 +32,9 @@ Console.Write($"Введите число в качестве значения '
 int start = int.Parse(Console.ReadLine()!);
 Console.Write($"Введите число в качестве значения 'end': ");
 int end = int.Parse(Console.ReadLine()!);
+start = MakeNonNegative(start);
+end = MakeNonNegative(end);
 int temp = 0;
-start = IsNaturalNumber(start);
-end = IsNaturalNumber(end);
 
 if (start > end)
 {
@@ -48,6 +48,7 @@ if (end > 0)
     Console.Write("Натуральные числа в заданном промежутке: ");
     PrintNumbersInRange(start, end);
 }
+
 else
 {
     Console.Write("Натуральных чисел в заданном промежутке нет");

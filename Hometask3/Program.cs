@@ -26,11 +26,20 @@ int[] GetInvertedArray(int[] array, int index, int[] invertedArray)
 
 // Ввод данных
 Console.Clear();
-Console.Write($"Введите число больше 0: ");
-int number = int.Parse(Console.ReadLine()!);
-int[] array = CreateRandomArray(number);
-int index = 0;
-int[] invertedArray = new int[number];
-invertedArray = GetInvertedArray(array, index, invertedArray);
-Console.WriteLine($"Сгенерированный массив: [{string.Join(", ", array)}]");
-Console.WriteLine($"Перевернутый массив: [{string.Join(", ", invertedArray)}]");
+while(true)
+{
+    Console.Write($"Введите число больше 1: ");
+    int number = int.Parse(Console.ReadLine()!);
+    if(number <= 1)
+    {
+        Console.WriteLine($"Вы ввели число меньше 1: ");
+        continue;
+    }
+    int[] array = CreateRandomArray(number);
+    int index = 0;
+    int[] invertedArray = new int[number];
+    invertedArray = GetInvertedArray(array, index, invertedArray);
+    Console.WriteLine($"Сгенерированный массив: [{string.Join(", ", array)}]");
+    Console.WriteLine($"Перевернутый массив: [{string.Join(", ", invertedArray)}]");
+    break;
+}
