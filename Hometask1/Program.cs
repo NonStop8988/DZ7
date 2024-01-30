@@ -26,17 +26,15 @@ int IsNaturalNumber(int number)
     return number;
 }
 
-///////////////////////// Ввод данных
+// Ввод данных
 Console.Clear();
-Console.Write("Введите число в качестве значения m: ");
+Console.Write($"Введите число в качестве значения 'start': ");
 int start = int.Parse(Console.ReadLine()!);
-Console.Write("Введите число в качестве значения n: ");
+Console.Write($"Введите число в качестве значения 'end': ");
 int end = int.Parse(Console.ReadLine()!);
 int temp = 0;
 start = IsNaturalNumber(start);
 end = IsNaturalNumber(end);
-// Console.WriteLine(start);
-// Console.WriteLine(end);
 
 if (start > end)
 {
@@ -44,11 +42,6 @@ if (start > end)
     start = end;
     end = temp;
 }
-
-// if (start == end)
-// {
-//     Console.Write("Заданные числа равны: ");
-// }
 
 if (end > 0)
 {
